@@ -3,6 +3,7 @@
 # Display: Closing Balance
 # Menu should have option to add more transaction to credit and debit into the account as well as an exit function also.
 
+# function to take input from user on their choice
 def abc():
     userchoice = ""
 
@@ -26,7 +27,8 @@ def abc():
             print("Nikal..peheli phursath mai nikal")
         else: 
             print("Glath choice hai chammooo")
-            
+
+# function to calculate balance amount           
 balance = 0
 def current_balance(amount):
     global balance
