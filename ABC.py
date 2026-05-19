@@ -16,13 +16,11 @@ def abc():
     Choice: ''')
 
         if userchoice == "1":
-            (current_balance(0))
+            current_balance(0)
         elif userchoice == "2":
-            amount = input("Enter number to credit to balance: ")
-            current_balance(amount)
+            current_balance(input("Enter number to credit to balance: "))
         elif userchoice == "3":
-            amount = input("Enter number to debit from balance: ")
-            current_balance(-int(amount))
+            current_balance(-int(input("Enter number to debit from balance: ")))
         elif userchoice == "4":
             print("Nikal..peheli phursath mai nikal")
         else: 
