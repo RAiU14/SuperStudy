@@ -1,5 +1,3 @@
-import math
-
 Username = input("Enter your User Name: ")
 Openingbalance = int(input("Enter your Opening Balance: "))
 OB = "Openingbalance"
