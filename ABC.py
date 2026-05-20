@@ -5,9 +5,8 @@
 
 # function to take input from user on their choice
 def abc():
-    userchoice = ""
 
-    while userchoice != "4":
+    while True:
         userchoice = input('''\nEnter your choice, select corresponding number: 
     1. Check Balance
     2. Credit transaction
@@ -23,6 +22,7 @@ def abc():
             current_balance(-int(input("Enter number to debit from balance: ")))
         elif userchoice == "4":
             print("Nikal..peheli phursath mai nikal")
+            exit()
         else: 
             print("Glath choice hai chammooo")
 
