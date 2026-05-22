@@ -2,6 +2,8 @@
 def filewriter(Username,Age) :
     with open("Account.txt", "a") as f:
         f.write(f"{Username}, {Age} \n")
+    with open("Account.txt") as f:
+        print(f.read())
     
 def AccountCreation():
     Username = input("Enter your User Name: ")
@@ -12,7 +14,7 @@ def AccountCreation():
         print("Congratulations you are eligible to create account")
         NewAccount = input(" Would you like to create account(Yes/No): ")
         if NewAccount.lower() == "yes":
-            filewriter (Username, Age)
+            filewriter(Username, Age)
 AccountCreation()
 
 
