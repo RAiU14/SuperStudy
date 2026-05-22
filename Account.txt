@@ -9,3 +9,5 @@ sree, 40
 sree, 40 
 abhi, 25 
 shiv, 88 
+girish, 70 
+sree, 20 
