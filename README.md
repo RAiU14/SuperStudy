@@ -20,18 +20,19 @@
 - [ ] DNS
   - [ ] [Cloudflare Learning Document, What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
   - [ ] [IBM Learning Document, What is DNS?](https://www.ibm.com/think/topics/dns)
-  - [ ] [Cloudflare Learning Document, DNS Server Types](https://www.cloudflare.com/learning/dns/dns-server-types/)
-  - [ ] [Cloudflare Learning Document, DNS A Record](https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/)
-  - [ ] [Cloudflare Learning Document, DNS CNAME Record](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/)
+  - [x] [Cloudflare Learning Document, DNS Server Types](https://www.cloudflare.com/learning/dns/dns-server-types/)
+  - [ ] [IBM Learning Document, DNS Records](https://www.ibm.com/think/topics/dns-records)
+  - [x] [Cloudflare Learning Document, DNS A Record](https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/)
+  - [x] [Cloudflare Learning Document, DNS CNAME Record](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/)
 
-Last Updated: 
-By: 
+
 
 Some other documents I refer to: 
 - [MD File Formatting](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Learning Git](https://www.w3schools.com/git/)
   - [Git Cheat Sheet](https://git-scm.com/cheat-sheet)
 - [Gitignore.io](https://www.toptal.com/developers/gitignore/)
+- [Network Protocol Explained in 18 Minutes](https://www.youtube.com/watch?v=4I2AZ1by_sY)
 
 
 
@@ -42,3 +43,5 @@ Some other documents I refer to:
   - [NetworkAcademy.io](https://www.networkacademy.io/)
   - [Cloudflare Learning](https://www.cloudflare.com/learning/)
 
+Last Updated: 22/05/2026\
+By: RAiU
