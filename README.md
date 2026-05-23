@@ -21,10 +21,12 @@
   - [ ] [Cloudflare Learning Document, What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
   - [ ] [IBM Learning Document, What is DNS?](https://www.ibm.com/think/topics/dns)
   - [x] [Cloudflare Learning Document, DNS Server Types](https://www.cloudflare.com/learning/dns/dns-server-types/)
-  - [ ] [IBM Learning Document, DNS Records](https://www.ibm.com/think/topics/dns-records)
+  - [x] [IBM Learning Document, DNS Records](https://www.ibm.com/think/topics/dns-records)
   - [x] [Cloudflare Learning Document, DNS A Record](https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/)
   - [x] [Cloudflare Learning Document, DNS CNAME Record](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/)
 
+- Planned for next: 
+  - [ ] [Palo Alto, What is Dynamic DNS?](https://www.paloaltonetworks.com/cyberpedia/what-is-dynamic-dns)
 
 
 Some other documents I refer to: 
