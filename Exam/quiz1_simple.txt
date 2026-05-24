@@ -1,0 +1,207 @@
+Computer Networking Quiz (AI Generated Questions)
+Topics: IPSEC, DHCP, NAT, APIPA
+Total Questions: 20
+Total Points: 20
+Each question carries 1 point.
+
+Q. What is the main purpose of IPSEC?
+
+1. To automatically assign IP addresses
+2. To secure IP communication using encryption and authentication
+3. To translate private IP addresses into public IP addresses
+4. To provide IP addresses when DHCP fails
+
+Answer: 2
+Points: 1
+
+Q. At which OSI layer does IPSEC mainly operate?
+
+1. Application Layer
+2. Transport Layer
+3. Network Layer
+4. Data Link Layer
+
+Answer: 3
+Points: 1
+
+Q. Which IPSEC protocol provides encryption for IP packets?
+
+1. AH
+2. ESP
+3. DHCP
+4. NAT
+
+Answer: 2
+Points: 1
+
+Q. What does AH in IPSEC mainly provide?
+
+1. Encryption only
+2. Authentication and integrity
+3. IP address translation
+4. Automatic IP assignment
+
+Answer: 2
+Points: 1
+
+Q. Which IPSEC mode encrypts the entire original IP packet?
+
+1. Transport mode
+2. Tunnel mode
+3. Broadcast mode
+4. Passive mode
+
+Answer: 2
+Points: 1
+
+Q. Which protocol is commonly used to negotiate security associations in IPSEC?
+
+1. DNS
+2. IKE
+3. FTP
+4. ARP
+
+Answer: 2
+Points: 1
+
+Q. What is the correct order of the DHCP process?
+
+1. Discover, Offer, Request, Acknowledge
+2. Request, Discover, Offer, Acknowledge
+3. Offer, Discover, Acknowledge, Request
+4. Acknowledge, Request, Offer, Discover
+
+Answer: 1
+Points: 1
+
+Q. Which DHCP message is sent first by a client looking for an IP address?
+
+1. DHCP Offer
+2. DHCP Request
+3. DHCP Discover
+4. DHCP Acknowledge
+
+Answer: 3
+Points: 1
+
+Q. What is the purpose of a DHCP lease?
+
+1. To permanently assign an IP address
+2. To assign an IP address for a limited time
+3. To encrypt the assigned IP address
+4. To convert private IP addresses to public IP addresses
+
+Answer: 2
+Points: 1
+
+Q. Which device helps DHCP clients get IP addresses from a DHCP server on another network?
+
+1. NAT gateway
+2. DHCP relay agent
+3. DNS resolver
+4. Firewall only
+
+Answer: 2
+Points: 1
+
+Q. Which of the following can be provided by DHCP?
+
+1. IP address
+2. Subnet mask
+3. Default gateway
+4. All of the above
+
+Answer: 4
+Points: 1
+
+Q. What happens when a DHCP client fails to renew its lease?
+
+1. It keeps using the IP address forever
+2. It must stop using the IP address after the lease expires
+3. It automatically becomes a DNS server
+4. It changes its MAC address
+
+Answer: 2
+Points: 1
+
+Q. What does NAT stand for?
+
+1. Network Access Table
+2. Network Address Translation
+3. Node Address Transfer
+4. Network Authentication Tunnel
+
+Answer: 2
+Points: 1
+
+Q. Why is NAT commonly used in home networks?
+
+1. To allow multiple private devices to access the internet using one public IP address
+2. To assign MAC addresses to devices
+3. To replace all routing protocols
+4. To encrypt all traffic automatically
+
+Answer: 1
+Points: 1
+
+Q. Which type of NAT uses port numbers to allow many private devices to share one public IP address?
+
+1. Static NAT
+2. Dynamic NAT
+3. PAT
+4. APIPA
+
+Answer: 3
+Points: 1
+
+Q. What is one disadvantage of NAT?
+
+1. It increases the number of public IPv4 addresses
+2. It can break end-to-end communication between devices
+3. It prevents all private network access
+4. It disables routing completely
+
+Answer: 2
+Points: 1
+
+Q. Which NAT type maps one private IP address to one public IP address?
+
+1. Static NAT
+2. Dynamic NAT
+3. PAT
+4. APIPA
+
+Answer: 1
+Points: 1
+
+Q. What is APIPA used for?
+
+1. To secure IP packets using encryption
+2. To assign an IP address automatically when DHCP fails
+3. To translate private addresses into public addresses
+4. To resolve domain names into IP addresses
+
+Answer: 2
+Points: 1
+
+Q. Which IP address range is used by APIPA?
+
+1. 192.168.0.0 to 192.168.255.255
+2. 10.0.0.0 to 10.255.255.255
+3. 169.254.0.0 to 169.254.255.255
+4. 172.16.0.0 to 172.31.255.255
+
+Answer: 3
+Points: 1
+
+Q. Which statement about APIPA is correct?
+
+1. APIPA addresses are routable on the internet
+2. APIPA allows communication only on the local network segment
+3. APIPA replaces the need for DHCP in large networks
+4. APIPA always gives a public IP address
+
+Answer: 2
+Points: 1
+
+Final Score: ____ / 20

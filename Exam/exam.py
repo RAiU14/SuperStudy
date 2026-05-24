@@ -8,7 +8,7 @@ def clear_terminal():
 
 # Reading the quiz file
 def quiz_read():
-    with open("quiz1.txt", "r", encoding="utf-8") as f:
+    with open("quiz1_simple.txt", "r", encoding="utf-8") as f:
         data = f.readlines()
 
     quiz = []
