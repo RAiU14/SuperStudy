@@ -11,10 +11,8 @@
     - [x] [GFG Learning Document](https://www.geeksforgeeks.org/computer-networks/dynamic-host-configuration-protocol-dhcp/)
     - [ ] [YouTube Study video](https://youtu.be/4pkDL1pgCgQ?si=8FPc5H5Y-9JzI3Rg)
     - [ ] [YouTube Study video - short](https://youtu.be/e6-TaH5bkjo?si=Y50aEX4vpQ_eGYFI)
-
-
-  [ ] DHCP RELAY
-    - [ ] [YouTube Study Video](https://youtu.be/Q-QvS4BEBew?si=nd2w7CEmIrjhnNxa)
+    - DHCP RELAY
+      - [ ] [YouTube Study Video](https://youtu.be/Q-QvS4BEBew?si=nd2w7CEmIrjhnNxa)
 
 - [x] NAT
     - [x] [Fortinet Learning Document](https://www.fortinet.com/resources/cyberglossary/network-address-translation)
