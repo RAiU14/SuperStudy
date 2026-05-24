@@ -1,0 +1,207 @@
+Computer Networking Quiz (AI Generated Questions)
+Topics: IPSEC, DHCP, NAT, APIPA, DNS
+Total Questions: 20
+Total Points: 20
+Each question carries 1 point.
+
+Q. A site-to-site IPSEC ESP tunnel is established. SSH works and small pings succeed, but large HTTPS downloads stall after the TLS handshake. What is the most likely technical cause?
+
+1. AH is encrypting the TCP payload twice
+2. ESP overhead is causing MTU or PMTUD issues and TCP MSS needs adjustment
+3. DHCP lease renewal is changing the public IP address on every packet
+4. DNS recursive resolution is returning an APIPA address
+
+Answer: 2
+Points: 1
+
+Q. A branch office sits behind a NAT device. IKE negotiation completes, but encrypted user traffic fails until NAT Traversal is enabled. Why does NAT Traversal solve this issue?
+
+1. ESP does not use TCP or UDP ports, so NAT Traversal encapsulates IPSEC traffic in UDP to make translation possible
+2. ESP uses TCP port 53, so NAT Traversal converts DNS traffic into DHCP traffic
+3. NAT Traversal disables encryption so firewalls can inspect the original packet
+4. NAT Traversal forces APIPA addresses to become routable across the internet
+
+Answer: 1
+Points: 1
+
+Q. Why is IPSEC AH usually a poor choice when traffic must pass through a NAT device?
+
+1. AH authenticates parts of the IP header that NAT changes, causing integrity validation to fail
+2. AH requires DHCP Option 82 before encryption can start
+3. AH only works with DNS CNAME records
+4. AH rewrites private IP addresses into public IP addresses
+
+Answer: 1
+Points: 1
+
+Q. Two IPSEC peers successfully build the IKE SA, but the Child SA fails with a traffic selector or proxy-ID mismatch. What should be checked first?
+
+1. Whether the local and remote encryption domains match on both peers
+2. Whether the DNS recursive resolver is also authoritative
+3. Whether APIPA is enabled on the client interfaces
+4. Whether the DHCP T1 timer is shorter than the T2 timer
+
+Answer: 1
+Points: 1
+
+Q. Why would a senior network engineer enable Perfect Forward Secrecy for IPSEC Child SA rekeying?
+
+1. To generate fresh key material during rekeying and reduce the impact of a compromised previous key
+2. To force all DNS CNAME records to become A records
+3. To allow PAT to reuse the same source port for every connection
+4. To make DHCP leases permanent across all VLANs
+
+Answer: 1
+Points: 1
+
+Q. A DHCP server hosts scopes for many VLANs. Requests from VLAN 30 arrive through a relay, but clients receive addresses from the wrong scope. Which field is most important for correct scope selection?
+
+1. chaddr, because it stores the client MAC address only
+2. giaddr, because it identifies the relay interface address for the client subnet
+3. yiaddr, because it is chosen by the DHCP client before discovery
+4. CNAME, because it maps the VLAN to an authoritative DNS server
+
+Answer: 2
+Points: 1
+
+Q. Rogue DHCP Offers are being sent from user access ports in a campus network. Which control most directly blocks this and also creates useful bindings for Dynamic ARP Inspection?
+
+1. Trust all switch ports for DHCP messages
+2. Enable DHCP snooping and trust only uplinks or server-facing ports
+3. Disable all DHCP relays and require APIPA on every client
+4. Configure static NAT for every endpoint in the VLAN
+
+Answer: 2
+Points: 1
+
+Q. A DHCP client has a valid lease and reaches the T1 renewal timer. What should the client normally do first?
+
+1. Send a unicast DHCPREQUEST to the original DHCP server to renew the lease
+2. Immediately self-assign an APIPA address and remove its default gateway
+3. Broadcast a new DHCPDISCOVER to every VLAN in the network
+4. Query the DNS root nameservers for a new IPv4 address
+
+Answer: 1
+Points: 1
+
+Q. Why might a service provider insert DHCP Option 82 information into relayed DHCP messages?
+
+1. To identify relay, circuit, or subscriber location information so the DHCP server can apply policy
+2. To encrypt DHCP traffic using ESP tunnel mode
+3. To convert recursive DNS queries into iterative DNS queries
+4. To translate private source ports using PAT
+
+Answer: 1
+Points: 1
+
+Q. In a redundant DHCP design, what is the main advantage of true DHCP failover compared with two independent servers serving the same full scope?
+
+1. The servers coordinate lease ownership and reduce the risk of duplicate address allocation
+2. Clients are forced to use APIPA whenever one server fails
+3. DNS dynamic updates are permanently disabled
+4. DHCP becomes a routing protocol between VLANs
+
+Answer: 1
+Points: 1
+
+Q. After a firewall redesign, outbound sessions leave through firewall A, but return packets arrive through firewall B. What NAT-related problem is most likely?
+
+1. Firewall B does not have the required stateful NAT table entry, so replies are dropped or untranslated
+2. The DHCP giaddr field is too long for the return packet
+3. The authoritative DNS server is sending recursive queries
+4. APIPA addresses are being advertised to the internet
+
+Answer: 1
+Points: 1
+
+Q. Thousands of internal clients share one public IPv4 address using PAT. What allows the NAT device to distinguish simultaneous flows from different inside hosts?
+
+1. The translated source port together with protocol and IP tuple information in the NAT state table
+2. The DNS TTL value stored in the authoritative zone
+3. The IPSEC SPI alone without any address information
+4. The DHCP lease start time only
+
+Answer: 1
+Points: 1
+
+Q. An internal web server must be reachable from the internet using a stable public IPv4 address. Which NAT approach is the cleanest fit?
+
+1. Static one-to-one NAT with an appropriate firewall/security policy
+2. APIPA with a 255.255.0.0 subnet mask
+3. Recursive DNS forwarding without any address translation
+4. Dynamic PAT only, with no inbound mapping
+
+Answer: 1
+Points: 1
+
+Q. Two companies both use 10.10.0.0/16 internally and must connect using a site-to-site VPN. Renumbering is not possible. What is a common workaround?
+
+1. Use policy NAT or overlap NAT so one or both sides are translated before IPSEC encryption
+2. Disable IKE authentication so both networks can overlap safely
+3. Replace ESP with DHCP relay messages
+4. Publish both private networks as DNS CNAME records
+
+Answer: 1
+Points: 1
+
+Q. A Windows host shows 169.254.45.80/16, has no default gateway, and cannot resolve DNS names. What does this most strongly indicate?
+
+1. The host failed to obtain DHCP configuration and self-assigned an IPv4 link-local address
+2. The host successfully received a public IPv4 lease from DHCP
+3. NAT is translating inbound DNS replies incorrectly
+4. IPSEC tunnel mode changed the client address to a public address
+
+Answer: 1
+Points: 1
+
+Q. Two hosts connected to the same unmanaged switch have 169.254.x.x/16 addresses. They can ping each other but cannot reach the router. Why?
+
+1. APIPA addresses are intended for local segment communication and are not routed
+2. CNAME records cannot point to canonical names
+3. NAT requires AH before routing can occur
+4. DHCP leases are permanent once assigned
+
+Answer: 1
+Points: 1
+
+Q. During a cold-cache DNS lookup for app.example.com, what path is typically followed by a recursive resolver?
+
+1. Root nameserver, TLD nameserver, authoritative nameserver, then answer/cache back to the client
+2. Client, APIPA service, NAT table, DHCP scope, then answer back to the browser
+3. Authoritative nameserver, root nameserver, then directly back to the client only
+4. DHCP relay, ESP header, AH header, then CNAME record
+
+Answer: 1
+Points: 1
+
+Q. A public authoritative nameserver for example.com is accidentally configured to allow open recursion. What is the primary operational risk?
+
+1. It can be abused as an open resolver for reflection/amplification traffic and unwanted recursive lookups
+2. It stops serving A records for its own authoritative zones
+3. It forces clients to self-assign APIPA addresses
+4. It prevents NAT devices from translating source ports
+
+Answer: 1
+Points: 1
+
+Q. www.example.com is a CNAME pointing to app.vendor.net. What must the resolver ultimately obtain before a browser can open an IPv4 connection?
+
+1. An A record for the canonical target or for another resolved target in the chain
+2. A DHCP Offer from the authoritative nameserver
+3. An IPSEC Security Association for the CNAME record
+4. A static NAT mapping on the recursive resolver
+
+Answer: 1
+Points: 1
+
+Q. You are migrating a critical service to new IP addresses and want clients to converge quickly during cutover while avoiding excessive DNS query load long-term. What TTL strategy is most appropriate?
+
+1. Lower the TTL well before migration, cut over the records, then raise the TTL after stability is confirmed
+2. Raise the TTL before migration so cached records expire faster
+3. Replace all A records with APIPA addresses during cutover
+4. Disable authoritative nameservers and rely only on NAT
+
+Answer: 1
+Points: 1
+
+Final Score: ____ / 20
