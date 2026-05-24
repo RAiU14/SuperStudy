@@ -35,7 +35,7 @@
 
 - [ ] SSL and TLS
  - [ ] [IBM Learning Document, What is TLS] (https://www.ibm.com/think/topics/transport-layer-security)
- 
+
 
 
 - Planned for next: 
@@ -62,5 +62,5 @@ Some other documents I refer to:
   - [NetworkAcademy.io](https://www.networkacademy.io/)
   - [Cloudflare Learning](https://www.cloudflare.com/learning/)
 
-Last Updated: 22/05/2026\
-By: RAiU
+Last Updated: 24/05/2026\
+By: Deeksha
