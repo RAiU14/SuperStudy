@@ -1,6 +1,6 @@
 # SuperStudy
 #### Something we friends are using to keep track of studies, programming and Networking to improve ourselves. 
-> Small steps at a time
+> Small steps at a time. This space keeps growing!
 
 
 - [x] IPSEC  
@@ -19,14 +19,30 @@
 
 - [ ] DNS
   - [ ] [Cloudflare Learning Document, What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
-  - [ ] [IBM Learning Document, What is DNS?](https://www.ibm.com/think/topics/dns)
+  - [x] [IBM Learning Document, What is DNS?](https://www.ibm.com/think/topics/dns)
   - [x] [Cloudflare Learning Document, DNS Server Types](https://www.cloudflare.com/learning/dns/dns-server-types/)
   - [x] [IBM Learning Document, DNS Records](https://www.ibm.com/think/topics/dns-records)
   - [x] [Cloudflare Learning Document, DNS A Record](https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/)
   - [x] [Cloudflare Learning Document, DNS CNAME Record](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/)
+  - [ ] [IBM Learning Document, What is DNSSEC?](https://www.ibm.com/think/topics/dnssec-vs-dns)
+  - [ ] [IBM Learning Document, What is Managed DNS?](https://www.ibm.com/think/topics/managed-dns)
+  - [x] [Palo Alto, What is Dynamic DNS?](https://www.paloaltonetworks.com/cyberpedia/what-is-dynamic-dns)
+  - [x] [Catchpoint Document, DoH, DoT](https://www.catchpoint.com/http2-vs-http3/dns-over-https-vs-tls)
+
+
 
 - Planned for next: 
-  - [ ] [Palo Alto, What is Dynamic DNS?](https://www.paloaltonetworks.com/cyberpedia/what-is-dynamic-dns)
+  - [TLS](https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/)
+  - [SSL](https://www.cloudflare.com/learning/ssl/what-is-ssl/) 
+  - [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
+  - IKE
+
+
+
+- Reading materials for; if there's too much time to kill: 
+  - [Palo Alto Document, Malware](https://www.paloaltonetworks.com/cyberpedia/what-is-malware)
+  - [Palo Alto Document, DNS Attacks](https://www.paloaltonetworks.com/cyberpedia/what-is-a-dns-attack)
+  - [Cloudflare Learning Document, What is GRE?](https://www.cloudflare.com/learning/network-layer/what-is-gre-tunneling/)
 
 
 Some other documents I refer to: 
