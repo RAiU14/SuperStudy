@@ -23,7 +23,7 @@
     - [ ] [YouTube Study Video](https://youtu.be/OlC7r4hefUA?si=L-wm3X9zQi4edHMa)
 
 - [ ] DNS
-  - [ ] [Cloudflare Learning Document, What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
+  - [x] [Cloudflare Learning Document, What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
   - [x] [IBM Learning Document, What is DNS?](https://www.ibm.com/think/topics/dns)
   - [x] [Cloudflare Learning Document, DNS Server Types](https://www.cloudflare.com/learning/dns/dns-server-types/)
   - [x] [IBM Learning Document, DNS Records](https://www.ibm.com/think/topics/dns-records)
@@ -36,9 +36,16 @@
   - [ ] [YouTube Study Video](https://youtu.be/FhC62Lm2338?si=Thf-Mnw7aFPXuSYn)
   - [ ] [YouTube Study video](https://youtu.be/rOLGvZagdC0?si=1XjvUb2ekKAI_8Ez)
 
+- [SSL]
+  - [ ] [Cloudflare Learning Document, What is SSL/TlS](https://www.cloudflare.com/learning/ssl/what-is-ssl/) 
+  - [x] [Cloudflare Learning Document, How does public key cryptography work?](https://www.cloudflare.com/learning/ssl/how-does-public-key-encryption-work/)
+  - [x] [Cloudflare Learning Document, What is asymmetric encryption?](https://www.cloudflare.com/learning/ssl/what-is-asymmetric-encryption/) 
+  - [x] [Cloudflare Learning Document, What is SSL Certificate?](https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/)
+  - [x] [Cloudflare Learning Document, What happens in a TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
+
+
 - Planned for next: 
   - [TLS](https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/)
-  - [SSL](https://www.cloudflare.com/learning/ssl/what-is-ssl/) 
   - [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
   - IKE
 
@@ -66,5 +73,5 @@ Some other documents I refer to:
   - [NetworkAcademy.io](https://www.networkacademy.io/)
   - [Cloudflare Learning](https://www.cloudflare.com/learning/)
 
-Last Updated: 24/05/2026\
+Last Updated: 25/05/2026\
 By: RAiU
