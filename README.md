@@ -47,16 +47,15 @@
   - [x] [Cloudflare Learning Document, What happens in a TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
   - [x] [Cloudflare Learning Document, What is session keys?](https://www.cloudflare.com/learning/ssl/what-is-a-session-key/)
 
+
 - Planned for next: 
-  - [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
   - [RTT](https://www.cloudflare.com/learning/cdn/glossary/round-trip-time-rtt/)
   - [IXPs](https://www.cloudflare.com/learning/cdn/glossary/internet-exchange-point-ixp/)
   - [Latency](https://www.cloudflare.com/learning/performance/glossary/what-is-latency/)
   - [Site Speed](https://www.cloudflare.com/learning/performance/why-site-speed-matters/)
-  - [WebApplication](https://www.cloudflare.com/learning/security/what-is-web-application-security/)
   - [CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
-  - IKE
-  - [Syslog](https://www.splunk.com/en_us/blog/learn/syslog.html)
+  - IKE: https://www.juniper.net/documentation/us/en/software/junos/vpn-ipsec/topics/topic-map/security-ike-basics.html, https://www.paloaltonetworks.com/cyberpedia/what-is-ike
+  - Syslog: https://www.splunk.com/en_us/blog/learn/syslog.html, https://www.networkacademy.io/ccna/network-services/simple-network-management-protocol-snmp
 
 
 
@@ -66,6 +65,8 @@
   - [Cloudflare Learning Document, What is GRE?](https://www.cloudflare.com/learning/network-layer/what-is-gre-tunneling/)
   - [Cloudflare Learning Document, What is data-breach?](https://www.cloudflare.com/learning/security/what-is-a-data-breach/)
   - [Cloudflare Learning Document, What does 'connection not private' mean?]()https://www.cloudflare.com/learning/ssl/connection-not-private-explained/
+  - [WebApplication](https://www.cloudflare.com/learning/security/what-is-web-application-security/)
+  - [x] [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
 
 
 Some other documents I refer to: 
@@ -84,5 +85,5 @@ Some other documents I refer to:
   - [NetworkAcademy.io](https://www.networkacademy.io/)
   - [Cloudflare Learning](https://www.cloudflare.com/learning/)
 
-Last Updated: 26/05/2026\
+Last Updated: 27/05/2026\
 By: RAiU
