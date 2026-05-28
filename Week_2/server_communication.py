@@ -20,7 +20,9 @@ commands = {
     "RAM": "free -h",
     "Uptime": "uptime -p",
     "IP Address(es)": "hostname -I",
-    "Disk Usage": "df -h /"
+    "Disk Usage": "df -h /",
+    "Download Speed": "curl -L -o /dev/null -s -w '%{speed_download}' 'https://speed.cloudflare.com/__down?bytes=25000000' | awk '{printf \"%.2f Mbps\", ($1 * 8) / 1000000}'",
+    "Upload Speed": "head -c 25000000 /dev/zero | curl -s -o /dev/null -X POST --data-binary @- -w '%{speed_upload}' 'https://speed.cloudflare.com/__up' | awk '{printf \"%.2f Mbps\", ($1 * 8) / 1000000}'"
 }
 
 try:
