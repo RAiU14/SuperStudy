@@ -1,14 +1,37 @@
 import os
-
+import random
+import sys
 
 # Clear terminal
 def clear_terminal():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+# Select the File
+def reading_quiz():
+    file_path = r"Exam\\Quiz_Files"
+    files = [item for item in os.listdir(file_path) if os.path.isfile(os.path.join(file_path, item))]
+
+    if not files:
+        print("No files found.")
+        return None
+
+    print("Available files:")
+    for index, file in enumerate(files, start=1):
+        print(f"{index}. {file}")
+
+    choice = int(input("Select a file number: "))
+
+    if choice < 1 or choice > len(files):
+        print("Invalid choice.")
+        return None
+
+    return files[choice - 1]
+
+
 # Reading the quiz file
-def quiz_read():
-    with open("quiz1_simple.txt", "r", encoding="utf-8") as f:
+def quiz_read(file_name):
+    with open(f"Exam\\Quiz_Files\\{file_name}", "r", encoding="utf-8") as f:
         data = f.readlines()
 
     quiz = []
@@ -32,7 +55,7 @@ def quiz_read():
                 "points": 1
             }
 
-        # Detect options: 1. option text
+        # Detect options: 
         elif (
             current_question is not None
             and len(line) > 2
@@ -41,13 +64,13 @@ def quiz_read():
         ):
             current_question["options"].append(line)
 
-        # Detect answer: Answer: 2
+        # Detect answer: 
         elif current_question is not None and line.lower().startswith("answer:"):
-            current_question["answer"] = int(line.split(":", 1)[1].strip())
+            current_question["answer"] = int(line.split(":")[1].strip())
 
         # Detect points: 
         elif current_question is not None and line.lower().startswith("points:"):
-            current_question["points"] = int(line.split(":", 1)[1].strip())
+            current_question["points"] = int(line.split(":")[1].strip())
 
     if current_question is not None:
         quiz.append(current_question)
@@ -61,9 +84,14 @@ def score_add(current_points: int, points: int):
 
 
 # Get user answer
-def get_user_answer():
+def get_user_answer(current_points, total_points):
     while True:
-        user_input = input("Enter your answer 1-4: ").strip()
+        user_input = input("Enter your answer 1-4, or q to quit: ").strip()
+
+        if user_input.lower() == "q":
+            print("\nQuiz ended early.")
+            print("Current Score:", str(current_points) + "/" + str(total_points))
+            sys.exit()
 
         if not user_input.isdigit():
             print("Invalid input. Please enter a number from 1 to 4.")
@@ -77,9 +105,8 @@ def get_user_answer():
 
         return answer
 
-
 # Display one question
-def display_question(question_data, current_points, question_number, total_questions):
+def display_question(question_data, current_points, question_number, total_questions, total_points):
     clear_terminal()
 
     print("Quiz")
@@ -91,19 +118,16 @@ def display_question(question_data, current_points, question_number, total_quest
     for option in question_data["options"]:
         print(option)
 
-
-    user_answer = get_user_answer()
-
-    if user_answer == question_data["answer"]:
+    if get_user_answer(current_points, total_points) == question_data["answer"]:
         print("Correct!")
         current_points = score_add(current_points, question_data["points"])
+
     else:
         print("Wrong!")
-        # Hiding it so that people can learn at a different time. Debating this situation
-        # print("Correct answer:", question_data["answer"])
+        print("Correct answer:", question_data["answer"])
+        input("Press Enter to continue\n")
 
     return current_points
-
 
 # Final score report
 def display_report(current_points, total_points):
@@ -112,30 +136,19 @@ def display_report(current_points, total_points):
     print("Quiz completed!")
     print("Final Score:", str(current_points) + "/" + str(total_points))
 
-    percentage = (current_points / total_points) * 100
-
-    print("Percentage:", str(round(percentage, 2)) + "%")
-
-    if percentage >= 80:
-        print("Result: Excellent")
-    elif percentage >= 60:
-        print("Result: Good")
-    elif percentage >= 40:
-        print("Result: Average")
-    else:
-        print("Better luck next time!")
 
 
 # Main program
 def main():
     current_points = 0
-
-    quiz = quiz_read()
+    quiz = quiz_read(reading_quiz())
 
     if len(quiz) == 0:
         print("No questions found in quiz file.")
         return
 
+    random.shuffle(quiz)
+    
     total_points = 0
 
     for item in quiz:
@@ -148,7 +161,8 @@ def main():
             question_data,
             current_points,
             index + 1,
-            total_questions
+            total_questions,
+            total_points
         )
 
     display_report(current_points, total_points)
