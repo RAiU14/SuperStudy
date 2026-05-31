@@ -9,7 +9,7 @@ def clear_terminal():
 
 # Select the File
 def reading_quiz():
-    file_path = r"Exam\\Quiz_Files"
+    file_path = os.path.join("Exam", "Quiz_Files")
     files = [item for item in os.listdir(file_path) if os.path.isfile(os.path.join(file_path, item))]
 
     if not files:
@@ -20,18 +20,25 @@ def reading_quiz():
     for index, file in enumerate(files, start=1):
         print(f"{index}. {file}")
 
-    choice = int(input("Select a file number: "))
+    while True:
+        user_input = input("Select a file number: ").strip()
 
-    if choice < 1 or choice > len(files):
-        print("Invalid choice.")
-        return None
+        if not user_input.isdigit():
+            print("Please enter a valid number.")
+            continue
 
-    return files[choice - 1]
+        choice = int(user_input)
+
+        if choice < 1 or choice > len(files):
+            print("Invalid choice.")
+            continue
+
+        return files[choice - 1]
 
 
 # Reading the quiz file
 def quiz_read(file_name):
-    with open(f"Exam\\Quiz_Files\\{file_name}", "r", encoding="utf-8") as f:
+    with open(os.path.join("Exam", "Quiz_Files", file_name), "r", encoding="utf-8") as f:
         data = f.readlines()
 
     quiz = []
@@ -105,6 +112,7 @@ def get_user_answer(current_points, total_points):
 
         return answer
 
+
 # Display one question
 def display_question(question_data, current_points, question_number, total_questions, total_points):
     clear_terminal()
@@ -129,6 +137,7 @@ def display_question(question_data, current_points, question_number, total_quest
 
     return current_points
 
+
 # Final score report
 def display_report(current_points, total_points):
     clear_terminal()
@@ -137,11 +146,14 @@ def display_report(current_points, total_points):
     print("Final Score:", str(current_points) + "/" + str(total_points))
 
 
-
 # Main program
 def main():
     current_points = 0
-    quiz = quiz_read(reading_quiz())
+    quiz_file = reading_quiz()
+    if quiz_file is None:
+        return
+
+    quiz = quiz_read(quiz_file)
 
     if len(quiz) == 0:
         print("No questions found in quiz file.")
