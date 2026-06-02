@@ -47,6 +47,9 @@
   - [x] [Cloudflare Learning Document, What happens in a TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
   - [x] [Cloudflare Learning Document, What is session keys?](https://www.cloudflare.com/learning/ssl/what-is-a-session-key/)
 
+- [ ] SASE
+  - [x] [Palo Alto Document, What Is SASE (Secure Access Service Edge)? | A Starter Guide](https://www.paloaltonetworks.com/cyberpedia/what-is-sase)
+
 
 - Planned for next: 
   - [RTT](https://www.cloudflare.com/learning/cdn/glossary/round-trip-time-rtt/)
