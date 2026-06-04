@@ -81,6 +81,10 @@ Some other documents I refer to:
 
 
 
+Mini Project: 
+- [ ] Write a Python Program to SSH into Termux on my Android Device. Install necessary packages to: 
+  - [x] Uptime of the device.
+
 
 > [!TIP]
 > Favourite sites:
@@ -88,5 +92,5 @@ Some other documents I refer to:
   - [NetworkAcademy.io](https://www.networkacademy.io/)
   - [Cloudflare Learning](https://www.cloudflare.com/learning/)
 
-Last Updated: 27/05/2026\
+Last Updated: 03/06/2026\
 By: RAiU
