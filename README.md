@@ -92,5 +92,9 @@ Mini Project:
   - [NetworkAcademy.io](https://www.networkacademy.io/)
   - [Cloudflare Learning](https://www.cloudflare.com/learning/)
 
-Last Updated: 03/06/2026\
+
+NOTE: All the other READMEs throughout week projects and if are lengthy, are written with some help of AI to speed up time writing them in easier to understand format and faster to save time. 
+> Keeping things focused more in development.
+
+Last Updated: 08/06/2026\
 By: RAiU
