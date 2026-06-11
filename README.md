@@ -70,9 +70,10 @@
   - [Cloudflare Learning Document, What does 'connection not private' mean?]()https://www.cloudflare.com/learning/ssl/connection-not-private-explained/
   - [WebApplication](https://www.cloudflare.com/learning/security/what-is-web-application-security/)
   - [x] [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
+  - [LinkedIn](https://www.linkedin.com/pulse/palo-alto-prisma-access-explained-core-components-design-umg5e/)
 
 
-Some other documents I refer to: 
+Some other documents & tools I refer to: 
 - [MD File Formatting](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Learning Git](https://www.w3schools.com/git/)
   - [Git Cheat Sheet](https://git-scm.com/cheat-sheet)
@@ -96,5 +97,5 @@ Mini Project:
 NOTE: All the other READMEs throughout week projects and if are lengthy, are written with some help of AI to speed up time writing them in easier to understand format and faster to save time. 
 > Keeping things focused more in development.
 
-Last Updated: 08/06/2026\
+Last Updated: 10/06/2026\
 By: RAiU

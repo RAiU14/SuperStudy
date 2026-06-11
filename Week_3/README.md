@@ -669,3 +669,601 @@ ssh_android.log beside app -> logs/ssh_android.log
 ```
 
 The project still connects to Android Termux over SSH and runs a read-only command string.
+
+
+# PyTest Guide for Netmiko Android SSH Project
+
+This project uses Python, Netmiko, and PyTest.
+
+The main goal of the project is:
+
+```text
+Python script -> Netmiko SSH connection -> Android Termux -> run command -> return output
+```
+
+The testing goal is:
+
+```text
+Test the Python code without connecting to a real Android phone
+```
+
+---
+
+## Project structure
+
+```text
+Week_3/
+├── android_conn.py
+├── command_execution.py
+├── README.md
+└── tests/
+    ├── conftest.py
+    ├── test_android_conn.py
+    └── test_command_execution.py
+```
+
+---
+
+## What is PyTest?
+
+PyTest is a Python testing framework.
+
+It lets you write small test functions to check whether your code works correctly.
+
+Example:
+
+```python
+def add(a, b):
+    return a + b
+
+
+def test_add():
+    assert add(2, 3) == 5
+```
+
+The important word is:
+
+```python
+assert
+```
+
+`assert` means:
+
+```text
+I expect this condition to be true.
+```
+
+If the condition is true, the test passes.
+
+If the condition is false, the test fails.
+
+---
+
+## Why we do not use a real phone in unit tests
+
+Your real program connects to Android Termux over SSH.
+
+But tests should not depend on:
+
+- Phone being online
+- Correct Wi-Fi network
+- Correct IP address
+- Correct password
+- Termux SSH server running
+
+So in these tests, we do not create a real SSH connection.
+
+Instead, we use mocks.
+
+---
+
+## What is mocking?
+
+Mocking means replacing a real object with a fake object during testing.
+
+Example:
+
+```python
+mock_connection = Mock()
+```
+
+This creates a fake Netmiko connection.
+
+Instead of actually connecting to your phone, the test pretends that the connection already exists.
+
+---
+
+## Why mocking is useful here
+
+Your real code does this:
+
+```python
+connection = ConnectHandler(**device)
+```
+
+This would normally open a real SSH connection.
+
+In testing, we replace `ConnectHandler` with a mock.
+
+Example:
+
+```python
+with patch("android_conn.ConnectHandler", return_value=mock_connection):
+```
+
+This means:
+
+```text
+When android_conn.py tries to call ConnectHandler,
+return mock_connection instead of creating a real SSH connection.
+```
+
+---
+
+## Test file: test_android_conn.py
+
+This file tests:
+
+```python
+connect_to_mobile()
+```
+
+from:
+
+```text
+android_conn.py
+```
+
+---
+
+### Test 1: Successful connection
+
+```python
+def test_connect_to_mobile_success():
+```
+
+This test checks whether:
+
+1. The Netmiko device dictionary is built correctly.
+2. `ConnectHandler()` is called correctly.
+3. The connection object is returned.
+
+Important line:
+
+```python
+mock_connect_handler.assert_called_once_with(**expected_device)
+```
+
+This checks that `ConnectHandler()` was called with the exact values we expected.
+
+---
+
+### Test 2: Authentication failure
+
+```python
+def test_connect_to_mobile_authentication_failure():
+```
+
+This test simulates a wrong password.
+
+The fake `ConnectHandler` raises:
+
+```python
+NetmikoAuthenticationException
+```
+
+The test expects that error:
+
+```python
+with pytest.raises(android_conn.NetmikoAuthenticationException):
+```
+
+This means:
+
+```text
+This test should pass only if this exception is raised.
+```
+
+---
+
+### Test 3: Timeout failure
+
+```python
+def test_connect_to_mobile_timeout_failure():
+```
+
+This test simulates a connection timeout.
+
+Example reasons in real life:
+
+- Wrong IP address
+- Phone not reachable
+- SSH server not running
+- Port blocked
+
+The fake exception is:
+
+```python
+NetmikoTimeoutException
+```
+
+---
+
+### Test 4: Unknown failure
+
+```python
+def test_connect_to_mobile_unknown_failure():
+```
+
+This checks that unexpected errors are still raised properly.
+
+---
+
+## Test file: test_command_execution.py
+
+This file tests:
+
+```python
+run_command()
+```
+
+from:
+
+```text
+command_execution.py
+```
+
+---
+
+## monkeypatch
+
+Some tests use:
+
+```python
+monkeypatch
+```
+
+`monkeypatch` is a PyTest fixture.
+
+It lets us temporarily change values during a test.
+
+Example:
+
+```python
+monkeypatch.setattr(command_execution, "EXECUTION_METHOD", "send_command")
+```
+
+This temporarily changes:
+
+```python
+EXECUTION_METHOD
+```
+
+only for that test.
+
+After the test finishes, PyTest restores the old value.
+
+---
+
+## Test: send_command_timing
+
+```python
+def test_run_command_with_send_command_timing(monkeypatch):
+```
+
+This test checks this branch:
+
+```python
+if EXECUTION_METHOD == "send_command_timing":
+```
+
+The fake command output is:
+
+```python
+mock_connection.send_command_timing.return_value = "up 2 hours\n"
+```
+
+The program strips the newline and returns:
+
+```text
+up 2 hours
+```
+
+---
+
+## Test: send_command
+
+```python
+def test_run_command_with_send_command(monkeypatch):
+```
+
+This test checks this branch:
+
+```python
+elif EXECUTION_METHOD == "send_command":
+```
+
+It verifies that this method was called:
+
+```python
+connection.send_command()
+```
+
+---
+
+## Test: no output
+
+```python
+def test_run_command_returns_no_output_message(monkeypatch):
+```
+
+This test simulates empty command output.
+
+If Netmiko returns only spaces:
+
+```python
+"   "
+```
+
+Your code strips it:
+
+```python
+output = output.strip()
+```
+
+Then returns:
+
+```text
+No output returned.
+```
+
+---
+
+## Test: invalid execution method
+
+```python
+def test_run_command_invalid_execution_method(monkeypatch):
+```
+
+This test changes:
+
+```python
+EXECUTION_METHOD
+```
+
+to:
+
+```text
+wrong_method
+```
+
+Expected result:
+
+```text
+Invalid execution method selected.
+```
+
+---
+
+## Test: ReadTimeout
+
+```python
+def test_run_command_read_timeout(monkeypatch):
+```
+
+This test simulates Netmiko timing out while waiting for command output.
+
+The fake connection raises:
+
+```python
+ReadTimeout
+```
+
+The test expects the same exception.
+
+---
+
+## Test: connection failure
+
+```python
+def test_run_command_connection_failure(monkeypatch):
+```
+
+This test simulates failure before command execution.
+
+For example:
+
+- SSH connection failed
+- Authentication failed
+- Host unreachable
+
+---
+
+## How PyTest finds tests
+
+PyTest automatically finds files named like:
+
+```text
+test_*.py
+```
+
+Examples:
+
+```text
+test_android_conn.py
+test_command_execution.py
+```
+
+It also automatically finds functions starting with:
+
+```text
+test_
+```
+
+Example:
+
+```python
+def test_run_command_with_send_command():
+```
+
+---
+
+## How to install requirements
+
+From PowerShell:
+
+```powershell
+python -m pip install pytest netmiko
+```
+
+If `python` does not work, try:
+
+```powershell
+py -m pip install pytest netmiko
+```
+
+---
+
+## How to run all tests
+
+From project root:
+
+```powershell
+cd C:\Projects\SuperStudy
+python -m pytest Week_3/tests -v
+```
+
+From inside `Week_3`:
+
+```powershell
+cd C:\Projects\SuperStudy\Week_3
+python -m pytest -v
+```
+
+---
+
+## How to run one test file
+
+```powershell
+python -m pytest Week_3/tests/test_android_conn.py -v
+```
+
+or:
+
+```powershell
+python -m pytest Week_3/tests/test_command_execution.py -v
+```
+
+---
+
+## How to run one test function
+
+Example:
+
+```powershell
+python -m pytest Week_3/tests/test_android_conn.py::test_connect_to_mobile_success -v
+```
+
+Another example:
+
+```powershell
+python -m pytest Week_3/tests/test_command_execution.py::test_run_command_with_send_command_timing -v
+```
+
+---
+
+## Why use python -m pytest?
+
+On Windows, this sometimes fails:
+
+```powershell
+pytest -v
+```
+
+because PowerShell may not find the `pytest` command.
+
+This is safer:
+
+```powershell
+python -m pytest -v
+```
+
+It means:
+
+```text
+Use Python to run the installed pytest module.
+```
+
+---
+
+## Unit test vs integration test
+
+These PyTest tests are unit tests.
+
+They do not connect to a real Android phone.
+
+```text
+Unit test:
+Uses mocks.
+Fast.
+No real phone needed.
+No network needed.
+```
+
+A real SSH test would be an integration test.
+
+```text
+Integration test:
+Uses real phone.
+Uses real Termux SSH.
+Uses real network.
+Can fail if the phone is offline.
+```
+
+For learning, start with unit tests first.
+
+---
+
+## Important PyTest commands
+
+Run all tests:
+
+```powershell
+python -m pytest -v
+```
+
+Run tests and show print output:
+
+```powershell
+python -m pytest -v -s
+```
+
+Run one file:
+
+```powershell
+python -m pytest tests/test_android_conn.py -v
+```
+
+Run one test:
+
+```powershell
+python -m pytest tests/test_android_conn.py::test_connect_to_mobile_success -v
+```
+
+---
+
+## Simple summary
+
+```text
+PyTest checks if your code behaves correctly.
+
+Mock replaces real SSH connections with fake ones.
+
+patch replaces imported functions/classes temporarily.
+
+monkeypatch temporarily changes variables.
+
+assert checks expected results.
+
+pytest.raises checks expected errors.
+```
