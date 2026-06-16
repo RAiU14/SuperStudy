@@ -4,8 +4,8 @@
 // ============================================
 
 // ----- 1. DECLARING VARIABLES -----
-let studentName = "Priya";
-const college = "ABC University";
+let studentName = "Shiv";
+const college = "Reva University";
 
 // ----- 2. WORKING WITH STRINGS -----
 let greeting = "Hello, " + studentName + "!";
@@ -35,8 +35,8 @@ score = 15;
 console.log("Updated score: " + score);
 
 // ----- 4. SIMPLE OUTPUT -----
-let userName = "Sam";
-let userCity = "Mumbai";
+let userName = "Shiv";
+let userCity = "Bangalore";
 let intro = `Hi, I'm ${userName} from ${userCity}.`;
 console.log(intro);
 
