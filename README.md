@@ -69,8 +69,13 @@
   - [Cloudflare Learning Document, What is data-breach?](https://www.cloudflare.com/learning/security/what-is-a-data-breach/)
   - [Cloudflare Learning Document, What does 'connection not private' mean?]()https://www.cloudflare.com/learning/ssl/connection-not-private-explained/
   - [WebApplication](https://www.cloudflare.com/learning/security/what-is-web-application-security/)
-  - [x] [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
+  - [CA](https://www.digicert.com/blog/what-is-a-certificate-authority)
   - [LinkedIn](https://www.linkedin.com/pulse/palo-alto-prisma-access-explained-core-components-design-umg5e/)
+    - [Cloudflare Learning Document, What is lateral movement?](https://www.cloudflare.com/learning/security/glossary/what-is-lateral-movement/)
+  - [Pentasecurity Blog, GDPR, HIPAA, PCI DSS, CCPA](https://www.pentasecurity.com/blog/4-data-compliance-standards-gdpr-hipaa-pci-dss-ccpa/)
+  - [Palo Alto Document, What is C&C Attack?](https://www.paloaltonetworks.com/cyberpedia/command-and-control-explained)
+  - [Gitlabs Document, CI/CD bestpractices](https://about.gitlab.com/blog/how-to-keep-up-with-ci-cd-best-practices/)
+
 
 
 Some other documents & tools I refer to: 
@@ -98,5 +103,5 @@ Mini Project:
 NOTE: All the other READMEs throughout week projects and if are lengthy, are written with some help of AI to speed up time writing them in easier to understand format and faster to save time. 
 > Keeping things focused more in development.
 
-Last Updated: 10/06/2026\
+Last Updated: 20/06/2026\
 By: RAiU
